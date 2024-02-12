@@ -1,0 +1,26 @@
+public class EvenSumFibonacci {
+
+    public static void main(String[] args) {
+        int n = 4; 
+        int evenSum = calculateEvenSum(n);
+        System.out.println("Even sum of Fibonacci series till " + n + " terms: " + evenSum);
+    }
+
+    static int calculateEvenSum(int n) {
+        if (n <= 0) {
+            return 0;
+        }
+        int a = 0, b = 1, sum = 0;
+
+        for (int i = 2; i <= 2 * n; i++) {
+            int c = a + b; 
+            a = b;
+            b = c;
+            if (i % 2 == 0) {
+                sum += c;
+            }
+        }
+
+        return sum;
+    }
+}
